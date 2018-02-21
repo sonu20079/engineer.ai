@@ -1,0 +1,29 @@
+<h1>Engineer.ai Assignment</h1>
+
+
+<div class="container">
+  <div class="form-group">
+      <div class="col-md-6">
+        <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search" />
+      </div>
+    </div>
+  <table class="table table-hover table-bordered">
+    <tr>
+      <th>
+        Name
+      </th>
+      <th (click)="sort('joining_date')">
+        Joining Date
+       <i class="fa fa-sort-asc"  aria-hidden="true"> </i>
+      </th>
+      <th>
+        Age
+      </th>
+    </tr>
+    <tr *ngFor="let emp of employees | search: searchText | orderBy: {property: 'joining_date', direction: direction}">
+      <td>{{emp.name}}</td>
+      <td>{{emp.joining_date}}</td>
+      <td>{{emp.age}}</td>
+    </tr>
+  </table>
+</div>

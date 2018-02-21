@@ -41,3 +41,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/HTML5Application/nbproject/private/
+/nbproject/private/
